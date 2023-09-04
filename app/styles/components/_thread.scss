@@ -1,0 +1,66 @@
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .threads-container {
+    position: relative;
+    background: white;
+    min-height: 80px;
+    width: 80%;
+    margin-top: 50px;
+    text-align: center;
+    border-radius: 5px;
+    & h2 {
+      font-size: 0.8rem;
+      font-family: $font2;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px;
+      color: #01132B;
+    }
+    & .content-thread {
+      font-size: 0.4rem;
+      font-weight: 600;
+      line-height: 9px;
+      font-family: $font3;
+      letter-spacing: 1px;
+      padding: 5px;
+      border-radius: 5px;
+      width: 95%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 60px;
+      margin: 10px;
+      background: #049396;
+      color: #01132B;
+      
+    }
+    & .button-thread {
+      border-top: solid;
+      border-width: 4px;
+      border-image: linear-gradient(90deg, #2b35b8 0%, #00c65d 100%) 1;
+      width: 100%;
+      height: 20px;
+      & button {
+        color: rgba(255, 0, 0, 0.603);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 10px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin-right: 5px;
+        
+      }
+      & a {
+        color: #2b35b8;
+      }
+    }
+    
+  }
+}

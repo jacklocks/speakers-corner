@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "title";
+  src: url("../assets/fonts/built\ titling\ bd.otf");
+}
+@font-face {
+  font-family: "sub-title";
+  src: url("../assets/fonts/accid___.ttf");
+}
+@font-face {
+  font-family: "text";
+  src: url("../assets/fonts/Roboto-Light.ttf");
+}
+
+$font: "title";
+$font2: "sub-title";
+$font3: "text";
+
+$color1: #f28500;
+$color2: #09a4db;
+$color3: #303030;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("../assets/img/wp10254485.webp") no-repeat center/cover;
+  width: 100%;
+}

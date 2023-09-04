@@ -1,0 +1,41 @@
+nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  position: relative;
+  background: #2b35b8;
+  background: linear-gradient(90deg, #2b35b8 0%, #00c65d 100%);
+  background: -webkit-linear-gradient(90deg, #2b35b8 0%, #00c65d 100%);
+  background: -moz-linear-gradient(90deg, #2b35b8 0%, #00c65d 100%);
+
+  & .title-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 25px;
+    margin: 7px;
+    width: 60%;
+    border-radius: 5px;
+    & h1 {
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      margin-left: 5px;
+      margin-top: 4px;
+      color: white;
+      text-transform: uppercase;
+      font-family: $font;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 2px $color3;
+    }
+  }
+  & .link {
+    right: 0;
+    text-decoration: none;
+    margin: 10px;
+    font-family: $font2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+  }
+}
