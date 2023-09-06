@@ -33,9 +33,9 @@ export default async function Thread() {
               </div>
 
               <div className="button-thread">
-                <RemoveBtn />
-                <Link href={"/commentThread/123"}>
-                  <HiPencilAlt  size={12}/>
+                <RemoveBtn id={t._id} />
+                <Link href={`/editThread/${t._id}`}>
+                  <HiPencilAlt size={12} />
                 </Link>
               </div>
             </div>
