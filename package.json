@@ -9,10 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "encoding": "^0.1.13",
+    "firebase": "^10.3.1",
+    "mongodb": "^6.0.0",
     "mongoose": "^7.5.0",
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.10.1"
+    "react-icons": "^4.10.1",
+    "sass": "^1.66.1"
   }
 }
