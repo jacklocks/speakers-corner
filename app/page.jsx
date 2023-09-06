@@ -4,8 +4,9 @@ import AddThread from "./components/AddThread";
 export default function Home() {
   return (
     <>
-      <AddThread />
-      <Thread />
+      <h1>bloup</h1>
+      {/* <AddThread />
+      <Thread /> */}
     </>
   );
 }
