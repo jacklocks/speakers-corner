@@ -12,5 +12,12 @@ export async function POST(request) {
 export async function GET() {
   await connectMongoDB();
   const threads = await Thread.find();
-  return NextResponse.json({threads})
+  return NextResponse.json({ threads });
+}
+
+export async function DELETE(request) {
+  const id = request.nextUrl.searchParams.get("id");
+  await connectMongoDB();
+  await Thread.findByIdAndDelete(id);
+  return NextResponse.json({ message: "Thread deleted" }, { status: 200 });
 }
