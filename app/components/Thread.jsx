@@ -9,6 +9,7 @@ const getThreads = async () => {
 
     if (!res.ok) {
       throw new Error("failed to fecth threads");
+      return {threads:[]}
     }
     return res.json();
   } catch (error) {
