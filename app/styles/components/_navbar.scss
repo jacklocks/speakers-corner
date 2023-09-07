@@ -1,6 +1,7 @@
 nav {
   display: flex;
   justify-content: flex-end;
+  height: 50px;
   width: 100%;
   position: relative;
   background: #2b35b8;
@@ -31,11 +32,17 @@ nav {
   }
   & .link {
     right: 0;
+    list-style-type: none;
     text-decoration: none;
     margin: 10px;
     font-family: $font2;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: white;
+    display: flex;
+    cursor: pointer;
+    & li {
+      margin: 5px;
+    }
   }
 }
