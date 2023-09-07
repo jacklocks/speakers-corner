@@ -6,7 +6,7 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "API_FIREBASE",
+  apiKey: "AIzaSyBF1gjCEg0jInATMHhTE_wexEutyUE84fU",
   authDomain: "speaker-auth.firebaseapp.com",
   projectId: "speaker-auth",
   storageBucket: "speaker-auth.appspot.com",
