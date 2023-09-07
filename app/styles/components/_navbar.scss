@@ -9,20 +9,20 @@ nav {
   background: linear-gradient(90deg, #2b35b8 0%, #00c65d 100%);
   background: -webkit-linear-gradient(90deg, #2b35b8 0%, #00c65d 100%);
   background: -moz-linear-gradient(90deg, #2b35b8 0%, #00c65d 100%);
-    & h1 {
-      font-size: 1.8rem;
-      display: flex;
-      flex-direction: column;
-      margin-left: 5px;
-      margin-top: 4px;
-      color: white;
-      text-transform: uppercase;
-      font-family: $font;
-      letter-spacing: 2px;
-      text-shadow: 2px 2px 2px $color3;
-    }
-  
-  & .link {
+  & h1 {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+    margin-top: 4px;
+    color: white;
+    text-transform: uppercase;
+    font-family: $font;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 2px $color3;
+  }
+
+  & ul {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,8 +47,8 @@ nav {
         & .img-google {
           background: white;
           padding: 3px;
-          height: 23px;
-          width: 23px;
+          height: 22px;
+          width: 22px;
           margin-left: 2px;
         }
         & p {
@@ -58,6 +58,27 @@ nav {
           font-size: 0.6rem;
         }
       }
+    }
+  }
+  & .user-log {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    font-family: $font3;
+    font-size: 1.2rem;
+    & .button-logout {
+      background: #01132b;
+      margin-top: 10px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      font-size: 1rem;
+      font-family: $font2;
+      width: 70px;
+      height: 20px;
+      text-align: center;
+      letter-spacing: 2px;
     }
   }
 }

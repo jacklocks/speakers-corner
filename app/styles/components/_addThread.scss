@@ -28,6 +28,7 @@
       border: none;
       border-radius: 5px;
       font-family: $font2;
+      font-size: 1rem;
       text-transform: capitalize;
       letter-spacing: 1px;
     }
@@ -42,11 +43,12 @@
       border: none;
       border-radius: 5px;
       font-family: $font2;
+      font-size: 1rem;
       text-transform: capitalize;
       letter-spacing: 1px;
     }
     & button {
-      width: 60px;
+      width: 70px;
       height: 20px;
       background: #01132B;
       color: white;
@@ -55,6 +57,7 @@
       text-align: center;
       text-transform: uppercase;
       font-family: $font2;
+      font-size: 1rem;
       letter-spacing: 2px;
       transition: 0.5s;
       &:hover {
