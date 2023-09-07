@@ -12,7 +12,7 @@ section {
     text-align: center;
     border-radius: 5px;
     & h2 {
-      font-size: 0.8rem;
+      font-size: 1rem;
       font-family: $font2;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -20,9 +20,9 @@ section {
       color: #01132B;
     }
     & .content-thread {
-      font-size: 0.4rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      line-height: 9px;
+      line-height: 12px;
       font-family: $font3;
       letter-spacing: 1px;
       padding: 5px;
@@ -36,7 +36,7 @@ section {
       min-height: 60px;
       margin: 10px;
       background: #049396;
-      color: #01132B;
+      color: white;
       
     }
     & .button-thread {
