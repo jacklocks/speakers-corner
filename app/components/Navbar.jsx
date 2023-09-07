@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { UserAuth } from "../context/AuthContext";
 import { useEffect, useState } from "react";
-import { resolve } from "styled-jsx/css";
+
 
 export default function Navbar() {
   const { user, googleSignIn, logOut } = UserAuth();

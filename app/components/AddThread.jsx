@@ -1,12 +1,22 @@
 "use client";
-
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { UserAuth } from "../context/AuthContext";
 
 const AddThread = () => {
+  const { user } = UserAuth();
+  const [loading, setLoading] = useState(true);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const router = useRouter();
+
+  useEffect(() => {
+    const checkAuthentification = async () => {
+      await new Promise((resolve) => setTimeout(resolve, 50));
+      setLoading(false);
+    };
+    checkAuthentification();
+  }, [user]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,28 +44,34 @@ const AddThread = () => {
   };
   return (
     <>
-      <div className="form-container">
-        <form onSubmit={handleSubmit}>
-          <input
-            className="input-title"
-            onChange={(e) => setTitle(e.target.value)}
-            type="text"
-            value={title}
-            placeholder="subject"
-            required
-          />
-          <input
-            className="input-description"
-            onChange={(e) => setDescription(e.target.value)}
-            type="text"
-            value={description}
-            maxLength="800"
-            placeholder="have your say"
-            required
-          />
-          <button type="submit">post</button>
-        </form>
-      </div>
+      {user ? (
+        <div className="form-container">
+          <form onSubmit={handleSubmit}>
+            <input
+              className="input-title"
+              onChange={(e) => setTitle(e.target.value)}
+              type="text"
+              value={title}
+              placeholder="subject"
+              required
+            />
+            <input
+              className="input-description"
+              onChange={(e) => setDescription(e.target.value)}
+              type="text"
+              value={description}
+              maxLength="800"
+              placeholder="have your say"
+              required
+            />
+            <button type="submit">post</button>
+          </form>
+        </div>
+      ) : (
+        <div className="no-log">
+          <p>You must be logged to create post</p>
+        </div>
+      )}
     </>
   );
 };
