@@ -38,19 +38,25 @@ export default function Navbar() {
       <h1>speaker's corner</h1>
 
       {loading ? null : !user ? (
-        <ul>
-          <li onClick={handleSignIn}>registration / login</li>
-          <li onClick={handleSignIn}>
-            <div className="log-google">
-              <Image className="img-google" src={imgGoogle} alt="Logo Google" />
-              <p>Sign in with Google</p>
-            </div>
-          </li>
-        </ul>
+        // <li onClick={handleSignIn}>registration / login</li>
+        <div className="authentication-container">
+          <div className="authentication">
+          <Link href="/signup">signup</Link>
+          <p>/</p>
+          <Link href="/login">login</Link>
+          </div>
+
+          <div onClick={handleSignIn} className="google-authentication">
+            <Image className="img-google" src={imgGoogle} alt="Logo Google" />
+            <p>Sign in with Google</p>
+          </div>
+        </div>
       ) : (
         <div className="user-log">
           <p>Welcome {user.displayName}</p>
-          <div className="button-logout" onClick={handleSignOut}>log out</div>
+          <div className="button-logout" onClick={handleSignOut}>
+            log out
+          </div>
         </div>
       )}
     </nav>
