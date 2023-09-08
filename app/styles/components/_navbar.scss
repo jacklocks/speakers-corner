@@ -11,8 +11,8 @@ nav {
   background: -moz-linear-gradient(90deg, #2b35b8 0%, #00c65d 100%);
   & h1 {
     font-size: 2rem;
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     margin-left: 5px;
     margin-top: 4px;
     color: white;
@@ -22,7 +22,7 @@ nav {
     text-shadow: 2px 2px 2px $color3;
   }
 
-  & ul {
+  & .authentication-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,9 +33,16 @@ nav {
     color: white;
     display: flex;
     cursor: pointer;
-    & li {
-      margin: 5px;
-      & .log-google {
+    & .authentication {
+      display: flex;
+    & a{
+      text-decoration: none;
+      margin: 0 5px;
+      color: white;
+      text-transform: uppercase;
+    }
+  }
+      & .google-authentication {
         background: #4081ec;
         color: black;
         display: flex;
@@ -44,6 +51,7 @@ nav {
         height: 26px;
         width: 140px;
         border-radius: 2px;
+        margin-top: 10px;
         & .img-google {
           background: white;
           padding: 3px;
@@ -59,7 +67,7 @@ nav {
         }
       }
     }
-  }
+  
   & .user-log {
     color: white;
     display: flex;
@@ -79,6 +87,7 @@ nav {
       height: 20px;
       text-align: center;
       letter-spacing: 2px;
+      cursor: pointer;
     }
   }
 }
