@@ -8,7 +8,7 @@ const getComments = async () => {
     const res = await fetch(`${apiURL}/api/comments`, { cache: "no-store" });
 
     if (!res.ok) {
-      throw new Error("failed to fecth comments");
+      //throw new Error("failed to fecth comments");
       return { comments: [] };
     }
     return res.json();
@@ -20,10 +20,6 @@ const getComments = async () => {
 export default async function Comment({ threadId }) {
   const { comments } = await getComments();
 
-  
-
-  
-
   return (
     <>
       <section>
@@ -33,7 +29,9 @@ export default async function Comment({ threadId }) {
               <div key={c._id}>
                 {threadId === c.threadId ? (
                   <>
-                    <div className="text-comment" style={{color:"white"}}>{c.comment}</div>
+                    <div className="text-comment" style={{ color: "white" }}>
+                      {c.comment}
+                    </div>
                     <div className="button-comment">
                       <Link href={`/editComment/${c._id}`}>
                         <HiPencilAlt size={12} />
@@ -42,9 +40,7 @@ export default async function Comment({ threadId }) {
                     </div>
                   </>
                 ) : (
-
                   <></>
-            
                 )}
               </div>
             ))}

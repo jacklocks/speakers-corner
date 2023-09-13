@@ -20,9 +20,10 @@ $font2: "sub-title";
 $font3: "text";
 $font4: "google";
 
-$color1: #f28500;
-$color2: #09a4db;
-$color3: #303030;
+$color1: #31343e;
+$color2: #ef3952;
+$color3: #646eff;
+$color4: #009d4c;
 
 * {
   box-sizing: border-box;
@@ -31,6 +32,6 @@ $color3: #303030;
 }
 
 body {
-  background: url("../assets/img/wp10254485.webp") no-repeat center/cover;
+  background: $color1;
   width: 100%;
 }

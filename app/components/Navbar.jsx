@@ -4,6 +4,7 @@ import { UserAuth } from "../context/AuthContext";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import imgGoogle from "../assets/img/pngegg.png";
+import logoSpeak from "../assets/img/logo speak.png";
 
 export default function Navbar() {
   const { user, googleSignIn, logOut } = UserAuth();
@@ -35,15 +36,15 @@ export default function Navbar() {
 
   return (
     <nav>
-      <h1>speaker's corner</h1>
-
+      <Image className="logo" src={logoSpeak} alt="logo speaker's corner" />
       {loading ? null : !user ? (
         // <li onClick={handleSignIn}>registration / login</li>
         <div className="authentication-container">
+          <h1>speaker's corner</h1>
           <div className="authentication">
-          <Link href="/signup">signup</Link>
-          <p>/</p>
-          <Link href="/login">login</Link>
+            <Link href="/signup">signup</Link>
+            <p>/</p>
+            <Link href="/login">login</Link>
           </div>
 
           <div onClick={handleSignIn} className="google-authentication">
@@ -53,6 +54,7 @@ export default function Navbar() {
         </div>
       ) : (
         <div className="user-log">
+          <h1>speaker's corner</h1>
           <p>Welcome {user.displayName}</p>
           <div className="button-logout" onClick={handleSignOut}>
             log out
