@@ -1,6 +1,5 @@
-import Link from "next/link";
-import { HiPencilAlt } from "react-icons/hi";
-import RemoveBtn from "./RemoveBtn";
+
+import SingleThread from "./SingleThread";
 
 const getThreads = async () => {
   const apiURL = process.env.API_URL;
@@ -9,7 +8,7 @@ const getThreads = async () => {
 
     if (!res.ok) {
       throw new Error("failed to fecth threads");
-      return {threads:[]}
+      return { threads: [] };
     }
     return res.json();
   } catch (error) {
@@ -19,30 +18,11 @@ const getThreads = async () => {
 
 export default async function Thread() {
   const { threads } = await getThreads();
-  console.log(threads);
   return (
-    <>
-      {threads.map((t) => (
-        <>
-          <section>
-            <div className="threads-container">
-              <div key={t._id}>
-                <div>
-                  <h2>{t.title}</h2>
-                  <div className="content-thread">{t.description}</div>
-                </div>
-              </div>
-
-              <div className="button-thread">
-                <RemoveBtn id={t._id} />
-                <Link href={`/editThread/${t._id}`}>
-                  <HiPencilAlt size={12} />
-                </Link>
-              </div>
-            </div>
-          </section>
-        </>
+    <section>
+      {threads && threads.map((t) => (
+        <SingleThread key={t._id} t={t} />
       ))}
-    </>
+   </section>
   );
 }

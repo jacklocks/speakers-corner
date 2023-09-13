@@ -2,22 +2,23 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
-  & .threads-container {
+  & .thread-container {
     position: relative;
     background: white;
     min-height: 80px;
     width: 80%;
     margin-top: 50px;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 5px 5px 0px 0px;
     & h2 {
       font-size: 1rem;
       font-family: $font2;
       letter-spacing: 1px;
       text-transform: uppercase;
       padding: 5px;
-      color: #01132B;
+      color: #01132b;
     }
     & .content-thread {
       font-size: 0.8rem;
@@ -36,11 +37,12 @@ section {
       min-height: 60px;
       margin: 10px;
       background: #049396;
+      // background: url("./../../assets/img/Bulle.png") no-repeat center/cover;
+      // background-size: 300px 150px;
       color: white;
-      
     }
     & .button-thread {
-      border-top: solid;
+      border-bottom: solid;
       border-width: 4px;
       border-image: linear-gradient(90deg, #2b35b8 0%, #00c65d 100%) 1;
       width: 100%;
@@ -55,12 +57,10 @@ section {
         right: 0;
         bottom: 0;
         margin-right: 5px;
-        
       }
       & a {
         color: #2b35b8;
       }
     }
-    
   }
 }

@@ -3,7 +3,9 @@ import EditThreadForm from "@/app/components/EditThreadForm";
 const getThreadById = async (id) => {
   const apiURL = process.env.API_URL;
   try {
-    const res = await fetch(`${apiURL}/api/threads/${id}`, { cache: "no-store" });
+    const res = await fetch(`${apiURL}/api/threads/${id}`, {
+      cache: "no-store",
+    });
 
     if (!res.ok) {
       throw new Error("Failed to fetch thread");
