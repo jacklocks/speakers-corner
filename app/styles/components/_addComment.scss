@@ -1,0 +1,13 @@
+.form-comment {
+    display: flex;
+    height: 50px;
+    background: white;
+    width: 80%;
+    border-radius: 0 0 5px 5px;
+    align-items: center;
+    justify-content: center;
+    
+    & .input-comment {
+
+    }
+}
