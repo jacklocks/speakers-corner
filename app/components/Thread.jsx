@@ -19,7 +19,7 @@ const getThreads = async () => {
 export default async function Thread() {
   const { threads } = await getThreads();
   return (
-    <section>
+    <section className="thread">
       {threads && threads.map((t) => (
         <SingleThread key={t._id} t={t} />
       ))}

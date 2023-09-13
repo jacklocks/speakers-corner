@@ -13,7 +13,6 @@
     height: 140px;
     margin-top: 30px;
     background:$color2;
-    opacity: 0.9;
     border-radius: 15px;
     & .input-title {
       display: flex;
@@ -66,7 +65,7 @@
       text-transform: uppercase;
       font-family: $font2;
       font-size: 1rem;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       transition: 0.5s;
       &:hover {
         border: 1px solid white;

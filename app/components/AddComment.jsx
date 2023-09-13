@@ -44,6 +44,7 @@ const AddComment = ({ threadId }) => {
   return (
     <>
       {user ? (
+        <section className="add-comment">
         <div className="form-comment">
           <form onSubmit={handleSubmit}>
             <input
@@ -55,9 +56,12 @@ const AddComment = ({ threadId }) => {
               placeholder="have your say"
               required
             />
+            <div className="comment-button">
             <button type="submit">comment</button>
+            </div>
           </form>
         </div>
+        </section>
       ) : (
         <div className="no-log">
           <p>You must be logged to comment</p>

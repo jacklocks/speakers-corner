@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { HiPencilAlt } from "react-icons/hi";
-import RemoveBtn from "./RemoveBtn";
+import { FaTrashAlt } from "react-icons/fa";
 
 const getComments = async () => {
   const apiURL = process.env.API_URL;
@@ -8,7 +8,6 @@ const getComments = async () => {
     const res = await fetch(`${apiURL}/api/comments`, { cache: "no-store" });
 
     if (!res.ok) {
-      //throw new Error("failed to fecth comments");
       return { comments: [] };
     }
     return res.json();
@@ -22,22 +21,25 @@ export default async function Comment({ threadId }) {
 
   return (
     <>
-      <section>
+      <section className="comment">
         <div className="comments-container">
           {comments &&
             comments.map((c) => (
               <div key={c._id}>
                 {threadId === c.threadId ? (
                   <>
-                    <div className="text-comment" style={{ color: "white" }}>
+                    <div className="text-comment">
                       {c.comment}
                     </div>
                     <div className="button-comment">
-                      <Link href={`/editComment/${c._id}`}>
-                        <HiPencilAlt size={12} />
+                      <Link className="pencil" href={`/editComment/${c._id}`}>
+                        <HiPencilAlt  />
                       </Link>
-                      <RemoveBtn id={c._id} />
+                      <div className="trash">
+                      <FaTrashAlt id={c._id} />
+                      </div>
                     </div>
+                    
                   </>
                 ) : (
                   <></>

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { HiPencilAlt } from "react-icons/hi";
-import RemoveBtn from "./RemoveBtn";
+import { FaTrashAlt } from "react-icons/fa";
 import AddComment from "./AddComment";
 import Comment from "./Comment";
 
@@ -17,10 +17,12 @@ const SingleThread = ({ t }) => {
         </div>
 
         <div className="button-thread">
-          <RemoveBtn id={t._id} />
-          <Link href={`/editThread/${t._id}`}>
-            <HiPencilAlt size={12} />
+        <Link className="pencil" href={`/editThread/${t._id}`}>
+            <HiPencilAlt  />
           </Link>
+          <div className="trash">
+          <FaTrashAlt id={t._id} />
+          </div>
         </div>
       </div>
       <Comment threadId={t._id} />
