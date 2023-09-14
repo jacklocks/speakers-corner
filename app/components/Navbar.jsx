@@ -4,7 +4,7 @@ import { UserAuth } from "../context/AuthContext";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import imgGoogle from "../assets/img/pngegg.png";
-import logoSpeak from "../assets/img/logo speak.png";
+import logoSpeak from "../assets/img/logospeak.png";
 
 export default function Navbar() {
   const { user, googleSignIn, logOut } = UserAuth();

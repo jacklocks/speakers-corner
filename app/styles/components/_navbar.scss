@@ -5,7 +5,7 @@ nav {
   align-items: center;
   height: 140px;
   width: 100%;
-  background:#272930;
+  background: #272930;
   position: relative;
   & .logo {
     width: 50px;
@@ -47,41 +47,52 @@ nav {
       right: 0;
       color: $color2;
       margin-top: 10px;
-    & a{
-      text-decoration: none;
-      margin: 0px 15px;
-      color: white;
-      text-transform: uppercase;
-      color: $color2;
-      cursor: pointer;
-    }
-  }
-      & .google-authentication {
-        background: $color3;
-        color: black;
-        display: flex;
-        text-align: center;
-        align-items: center;
-        height: 26px;
-        width: 140px;
-        border-radius: 2px;
-        margin-top: 10px;
-        & .img-google {
-          background: white;
-          padding: 3px;
-          height: 22px;
-          width: 22px;
-          margin-left: 2px;
-        }
-        & p {
-          padding: 7px;
-          color: white;
-          font-family: $font4;
-          font-size: 0.6rem;
+      & a {
+        text-decoration: none;
+        margin: 0px 15px;
+        color: white;
+        text-transform: uppercase;
+        color: $color2;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover {
+          transform: scale(1.2);
+          transition: 0.5s;
         }
       }
     }
-  
+    & .google-authentication {
+      background: $color3;
+      color: black;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      height: 26px;
+      width: 140px;
+      border-radius: 2px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: 0.5s;
+      &:hover {
+        transform: scale(1.2);
+        transition: 0.5s;
+      }
+      & .img-google {
+        background: white;
+        padding: 3px;
+        height: 22px;
+        width: 22px;
+        margin-left: 2px;
+      }
+      & p {
+        padding: 7px;
+        color: white;
+        font-family: $font4;
+        font-size: 0.6rem;
+      }
+    }
+  }
+
   & .user-log {
     color: white;
     display: flex;
@@ -105,6 +116,12 @@ nav {
       text-align: center;
       letter-spacing: 1px;
       cursor: pointer;
+      transition: 0.5s;
+      &:hover {
+        transform: scale(1.2);
+        transition: 0.5s;
+        border: 1px solid $color2;
+      }
     }
   }
 }

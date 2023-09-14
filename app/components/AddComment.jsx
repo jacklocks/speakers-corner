@@ -2,6 +2,8 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { UserAuth } from "../context/AuthContext";
+import Image from "next/image";
+import logoSpeak from "../assets/img/logospeak.png";
 
 const AddComment = ({ threadId }) => {
   const { user } = UserAuth();
@@ -53,11 +55,13 @@ const AddComment = ({ threadId }) => {
               type="text"
               value={comment}
               maxLength="800"
-              placeholder="have your say"
+              placeholder="Write your comment"
               required
             />
             <div className="comment-button">
-            <button type="submit">comment</button>
+            <button type="submit">
+            <Image className="button-logo" src={logoSpeak} alt="logo speaker's corner" />
+            </button>
             </div>
           </form>
         </div>

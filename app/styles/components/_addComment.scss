@@ -1,45 +1,46 @@
 .add-comment {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
- & .form-comment {
-    background: $color2;
-    min-height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  & .form-comment {
+    background: $color3;
+    min-height: 120px;
     width: 80%;
     text-align: center;
     border-radius: 0px 0px 5px 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+    border-top: 10px solid white;
+
     & .input-comment {
-        min-height: 40px;
-        width: 95%;
-        border-radius: 5px;
-        border: none;
+      min-height: 40px;
+      width: 95%;
+      border-radius: 5px;
+      border: none;
+      text-align: center;
+      &::placeholder {
+        color: $color1;
+      }
+
     }
-    & .comment-button button {
-        width: 70px;
-        height: 20px;
-        background:$color3;
-        color: white;
+    & button {
+        background: transparent;
         border: none;
-        border-radius: 10px;
-        text-align: center;
-        text-transform: uppercase;
-        font-family: $font2;
-        font-size: 1rem;
-        letter-spacing: 1px;
-        transition: 0.5s;
         margin-top: 10px;
+      & .button-logo {
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        transition: 0.5s;
         &:hover {
-          border: 1px solid white;
           transform: scale(1.2);
           transition: 0.5s;
         }
-       
-    }
-}
+      }
+      }
+  }
 }

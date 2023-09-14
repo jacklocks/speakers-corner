@@ -2,6 +2,8 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { UserAuth } from "../context/AuthContext";
+import Image from "next/image";
+import logoSpeak from "../assets/img/logospeak.png";
 
 const AddThread = () => {
   const { user } = UserAuth();
@@ -64,7 +66,9 @@ const AddThread = () => {
               placeholder="have your say"
               required
             />
-            <button type="submit">post</button>
+            <button type="submit">
+            <Image className="button-logo" src={logoSpeak} alt="logo speaker's corner" />
+            </button>
           </form>
         </div>
       ) : (
