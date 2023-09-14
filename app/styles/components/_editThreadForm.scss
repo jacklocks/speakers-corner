@@ -1,0 +1,71 @@
+.editThread-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  & form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    padding: 10px;
+    height: 150px;
+    margin-top: 30px;
+    background: $color3;
+    border-radius: 5px;
+  }
+  & .input-title {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+    height: 20px;
+    width: 80%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-family: $font2;
+    font-size: 1rem;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    background: white;
+    color: $color1;
+    &::placeholder {
+      color: $color1;
+    }
+  }
+  & .input-description {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+    height: 40px;
+    width: 80%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-family: $font2;
+    font-size: 1rem;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    background: white;
+    color: $color1;
+    &::placeholder {
+      color: $color1;
+    }
+  }
+  & button {
+    background: transparent;
+    border: none;
+  & .button-logo {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+      transform: scale(1.2);
+      transition: 0.5s;
+    }
+  }
+  }
+}

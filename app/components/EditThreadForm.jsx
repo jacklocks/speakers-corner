@@ -2,6 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Image from "next/image";
+import logoSpeak from "../assets/img/logospeak.png";
 
 export default function EditThreadForm({ id, title, description }) {
   const [newTitle, setNewTitle] = useState(title);
@@ -22,26 +24,32 @@ export default function EditThreadForm({ id, title, description }) {
       if (!res.ok) {
         throw new Error("failed to update thread");
       }
-      router.push("/")
+      router.push("/");
     } catch (error) {
       console.log(error);
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        onChange={(e) => setNewTitle(e.target.value)}
-        value={newTitle}
-        type="text"
-        placeholder="subject"
-      />
-      <input
-        onChange={(e) => setNewDescription(e.target.value)}
-        value={newDescription}
-        type="text"
-        placeholder="have your say"
-      />
-      <button>update post</button>
-    </form>
+    <div className="editThread-container">
+      <form onSubmit={handleSubmit}>
+        <input
+          className="input-title"
+          onChange={(e) => setNewTitle(e.target.value)}
+          value={newTitle}
+          type="text"
+          placeholder="subject"
+        />
+        <input
+          className="input-description"
+          onChange={(e) => setNewDescription(e.target.value)}
+          value={newDescription}
+          type="text"
+          placeholder="have your say"
+        />
+         <button type="submit">
+            <Image className="button-logo" src={logoSpeak} alt="logo speaker's corner" />
+            </button>
+      </form>
+    </div>
   );
 }

@@ -1,7 +1,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { HiOutlineTrash } from "react-icons/hi";
+//import { HiOutlineTrash } from "react-icons/hi";
+import { FaTrashAlt } from "react-icons/fa";
 
 export default function RemoveBtn({ id }) {
   const router = useRouter();
@@ -19,8 +20,8 @@ export default function RemoveBtn({ id }) {
     }
   };
   return (
-    <button onClick={removeThread}>
-      <HiOutlineTrash size={12} />
+    <button className="remove-thread" onClick={removeThread}>
+      <FaTrashAlt  />
     </button>
   );
 }

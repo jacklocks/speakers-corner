@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { HiPencilAlt } from "react-icons/hi";
-import { FaTrashAlt } from "react-icons/fa";
+//import { FaTrashAlt } from "react-icons/fa";
+import RemoveBtn from "./RemoveBtnThread";
 import AddComment from "./AddComment";
 import Comment from "./Comment";
 
@@ -21,7 +22,7 @@ const SingleThread = ({ t }) => {
             <HiPencilAlt  />
           </Link>
           <div className="trash">
-          <FaTrashAlt id={t._id} />
+          <RemoveBtn id={t._id} />
           </div>
         </div>
       </div>

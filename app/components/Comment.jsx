@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { HiPencilAlt } from "react-icons/hi";
 import { FaTrashAlt } from "react-icons/fa";
+import RemoveBtn from "./RemoveBtnComment";
 
 const getComments = async () => {
   const apiURL = process.env.API_URL;
@@ -28,18 +29,15 @@ export default async function Comment({ threadId }) {
               <div key={c._id}>
                 {threadId === c.threadId ? (
                   <>
-                    <div className="text-comment">
-                      {c.comment}
-                    </div>
+                    <div className="text-comment">{c.comment}</div>
                     <div className="button-comment">
                       <Link className="pencil" href={`/editComment/${c._id}`}>
-                        <HiPencilAlt  />
+                        <HiPencilAlt />
                       </Link>
                       <div className="trash">
-                      <FaTrashAlt id={c._id} />
+                        <RemoveBtn id={c._id} />
                       </div>
                     </div>
-                    
                   </>
                 ) : (
                   <></>
