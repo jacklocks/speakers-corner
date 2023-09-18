@@ -3,9 +3,9 @@ import Thread from "@/models/thread";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
-  const { title, description } = await request.json();
+  const { title, description, author, authorEmail, userId } = await request.json();
   await connectMongoDB();
-  await Thread.create({ title, description });
+  await Thread.create({ title, description, author, authorEmail, userId });
   return NextResponse.json({ message: "Thread Created" }, { status: 201 });
 }
 

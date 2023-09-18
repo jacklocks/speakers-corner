@@ -4,6 +4,8 @@ const commentSchema = new Schema(
   {
     comment: String,
     threadId: String,
+    authorComment: String,
+    userCommentId: String,
   },
   {
     timestamp: true,

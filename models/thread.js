@@ -4,6 +4,9 @@ const threadSchema = new Schema(
   {
     title: String,
     description: String,
+    author: String,
+    authorEmail: String,
+    userId: String,
   },
   {
     timestamp: true,

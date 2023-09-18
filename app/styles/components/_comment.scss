@@ -4,11 +4,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
   & .comments-container {
     background: white;
     width: 80%;
     text-align: center;
-    height:auto;
+    height: auto;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
     & .text-comment {
       font-size: 0.8rem;
       font-weight: 600;
@@ -24,10 +29,17 @@
       justify-content: center;
       align-items: center;
       min-height: 40px;
-      margin: 10px;
+      margin: 0 10px 10px;
       background: white;
       color: $color1;
     }
+    & .auth-comment {
+      margin: 7px;
+      font-size: 0.7rem;
+      left: 0; 
+      display: flex;
+    }
+   
     & .button-comment {
       width: 100%;
       height: 30px;
@@ -53,6 +65,35 @@
         color: $color1;
         font-size: 20px;
         margin: 4px 15px 0 0;
+      }
+    }
+  }
+  .show-comments {
+    background: white;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .toggle-comments {
+      border: none;
+      background: $color3;
+      color: white;
+      margin: 10px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      font-family: $font2;
+      width: 100px;
+      height: 20px;
+      text-align: center;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: 0.5s;
+      &:hover {
+        transform: scale(1.2);
+        transition: 0.5s;
+        // border: 1px solid $color2;
       }
     }
   }

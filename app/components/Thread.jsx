@@ -1,4 +1,3 @@
-
 import SingleThread from "./SingleThread";
 
 const getThreads = async () => {
@@ -19,10 +18,10 @@ const getThreads = async () => {
 export default async function Thread() {
   const { threads } = await getThreads();
   return (
+    <>
     <section className="thread">
-      {threads && threads.map((t) => (
-        <SingleThread key={t._id} t={t} />
-      ))}
-   </section>
+      {threads && threads.map((t) => <SingleThread key={t._id} t={t} />)}
+    </section>
+    </>
   );
 }

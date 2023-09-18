@@ -3,9 +3,9 @@ import Comment from "@/models/comment";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
-  const { threadId, comment } = await request.json();
+  const { threadId, comment, authorComment, userCommentId } = await request.json();
   await connectMongoDB();
-  await Comment.create({ threadId, comment });
+  await Comment.create({ threadId, comment, authorComment, userCommentId });
   return NextResponse.json({ message: "Comment Created" }, { status: 201 });
 }
 

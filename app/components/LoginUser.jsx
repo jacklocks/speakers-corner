@@ -1,60 +1,48 @@
 "use client";
 import React from "react";
-import { useRef } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
 import { auth } from "../firebase";
 import { useRouter } from "next/navigation";
-
-
+import { UserAuth } from "../context/AuthContext";
 
 const LoginUser = () => {
-  const lemailRef = useRef();
-  const lpasswordRef = useRef();
+  const { signIn } = UserAuth();
   const router = useRouter();
-  
 
-  const LoginUser = (e) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const email = lemailRef.current.value;
-    const password = lpasswordRef.current.value;
-    
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log(user);
-        alert("login successfull");
-        router.push("/");
-
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert("wrong adress or passsword");
-        // ..
-      });
+    try {
+      await signIn(email, password);
+      alert("Login success");
+      router.push("/");
+    } catch (error) {
+      console.log(error);
+      alert("password or email wrong");
+    }
   };
 
   return (
-    <div>
+    <>
       <div>
         <h1>login</h1>
-        <form onSubmit={LoginUser}>
+        <form onSubmit={handleSubmit}>
           <input
             type="email"
             placeholder="enter your email adress"
-            ref={lemailRef}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"
             placeholder="enter your password"
-            ref={lpasswordRef}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <button type="submit">login</button>
         </form>
       </div>
-    </div>
+    </>
   );
 };
 

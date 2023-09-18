@@ -1,59 +1,51 @@
 "use client";
-import React from "react";
-import { useRef } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-
-
+import { UserAuth } from "../context/AuthContext";
 
 const AddUser = () => {
-  const emailRef = useRef();
-  const passwordRef = useRef();
   const router = useRouter();
-  
+  const { createUser } = UserAuth();
 
-  const AddUser = (e) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
-    
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        alert("signup successfull");
-        router.push("/");
-
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert("wrong adress or passsword");
-        // ..
-      });
+    try {
+      await createUser(email, password);
+      alert("signUp successfull");
+      setEmail("");
+      setPassword("");
+      router.push("/");
+      router.refresh();
+    } catch (error) {
+      alert("email or password miss");
+      console.log(error);
+    }
   };
 
   return (
-    <div>
+    <>
       <div>
         <h1>signup</h1>
-        <form onSubmit={AddUser}>
+        <form onSubmit={handleSubmit}>
           <input
             type="email"
             placeholder="enter your email adress"
-            ref={emailRef}
+            onChange={(e) => setEmail(e.target.value)}
+            required
           />
           <input
             type="password"
             placeholder="enter your password"
-            ref={passwordRef}
+            onChange={(e) => setPassword(e.target.value)}
+            required
           />
           <button type="submit">signup</button>
         </form>
       </div>
-    </div>
+    </>
   );
 };
 

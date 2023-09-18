@@ -24,27 +24,30 @@ export default function EditCommentForm({ id, comment }) {
         throw new Error("failed to update comment");
       }
       router.push("/");
+      router.refresh();
     } catch (error) {
       console.log(error);
     }
   };
   return (
-    <div className="editComment-container">
-      <form onSubmit={handleSubmit}>
-        <input
-          onChange={(e) => setNewComment(e.target.value)}
-          value={newComment}
-          type="text"
-          placeholder="Write your comment"
-        />
-        <button type="submit">
-          <Image
-            className="button-logo"
-            src={logoSpeak}
-            alt="logo speaker's corner"
+    <>
+      <div className="editComment-container">
+        <form onSubmit={handleSubmit}>
+          <input
+            onChange={(e) => setNewComment(e.target.value)}
+            value={newComment}
+            type="text"
+            placeholder="Write your comment"
           />
-        </button>
-      </form>
-    </div>
+          <button type="submit">
+            <Image
+              className="button-logo"
+              src={logoSpeak}
+              alt="logo speaker's corner"
+            />
+          </button>
+        </form>
+      </div>
+    </>
   );
 }

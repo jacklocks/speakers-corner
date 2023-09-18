@@ -35,32 +35,42 @@ export default function Navbar() {
   }, [user]);
 
   return (
-    <nav>
-      <Image className="logo" src={logoSpeak} alt="logo speaker's corner" />
-      {loading ? null : !user ? (
-        // <li onClick={handleSignIn}>registration / login</li>
-        <div className="authentication-container">
-          <h1>speaker's corner</h1>
-          <div className="authentication">
-            <Link href="/signup">signup</Link>
-            <p>/</p>
-            <Link href="/login">login</Link>
-          </div>
+    <>
+      <nav>
+        <Image className="logo" src={logoSpeak} alt="logo speaker's corner" />
+        {!user ? (
+          <>
+            <div className="authentication-container">
+              <h1>speaker's corner</h1>
+              <div className="authentication">
+                <Link href="/signup">signup</Link>
+                <p>/</p>
+                <Link href="/login">login</Link>
+              </div>
 
-          <div onClick={handleSignIn} className="google-authentication">
-            <Image className="img-google" src={imgGoogle} alt="Logo Google" />
-            <p>Sign in with Google</p>
-          </div>
-        </div>
-      ) : (
-        <div className="user-log">
-          <h1>speaker's corner</h1>
-          <p>Welcome {user.displayName}</p>
-          <div className="button-logout" onClick={handleSignOut}>
-            log out
-          </div>
-        </div>
-      )}
-    </nav>
+              <div onClick={handleSignIn} className="google-authentication">
+                <Image
+                  className="img-google"
+                  src={imgGoogle}
+                  alt="Logo Google"
+                />
+                <p>Sign in with Google</p>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="user-log">
+              <h1>speaker's corner</h1>
+              <img src={user.photoURL} alt="profile picture" />
+              <p>Welcome {user.displayName ? user.displayName : user.email}</p>
+              <div className="button-logout" onClick={handleSignOut}>
+                log out
+              </div>
+            </div>
+          </>
+        )}
+      </nav>
+    </>
   );
 }

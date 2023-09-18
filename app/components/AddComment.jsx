@@ -10,7 +10,11 @@ const AddComment = ({ threadId }) => {
   const [loading, setLoading] = useState(true);
   const [comment, setComment] = useState("");
   const router = useRouter();
+  const userName = user && user.displayName;
+  const userEmail = user && user.email;
+  const userCommentId = user && user.uid;
 
+  const authorComment = user && user.displayName;
 
   useEffect(() => {
     const checkAuthentification = async () => {
@@ -28,7 +32,12 @@ const AddComment = ({ threadId }) => {
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify({ threadId, comment }),
+        body: JSON.stringify({
+          threadId,
+          comment,
+          authorComment,
+          userCommentId,
+        }),
       });
 
       if (res.ok) {
@@ -36,10 +45,10 @@ const AddComment = ({ threadId }) => {
         setComment("");
         router.refresh();
       } else {
-        throw new Error("failed to post");
+        throw new Error("failed to post", res.status);
       }
     } catch (error) {
-      console.log(error);
+      console.log(error, "ntm");
     }
     return;
   };
@@ -47,24 +56,29 @@ const AddComment = ({ threadId }) => {
     <>
       {user ? (
         <section className="add-comment">
-        <div className="form-comment">
-          <form onSubmit={handleSubmit}>
-            <input
-              className="input-comment"
-              onChange={(e) => setComment(e.target.value)}
-              type="text"
-              value={comment}
-              maxLength="800"
-              placeholder="Write your comment"
-              required
-            />
-            <div className="comment-button">
-            <button type="submit">
-            <Image className="button-logo" src={logoSpeak} alt="logo speaker's corner" />
-            </button>
-            </div>
-          </form>
-        </div>
+          <div className="form-comment">
+            <form onSubmit={handleSubmit}>
+              <input
+                className="input-comment"
+                onChange={(e) => setComment(e.target.value)}
+                type="text"
+                value={comment}
+                maxLength="800"
+                placeholder="Write your comment"
+                required
+              />
+              <div className="comment-button">
+                <button type="submit">
+                  <Image
+                    className="button-logo"
+                    src={logoSpeak}
+                    alt="logo speaker's corner"
+                  />
+                </button>
+              </div>
+            </form>
+            {/* <p>{userName ? userName : userEmail}</p> */}
+          </div>
         </section>
       ) : (
         <div className="no-log">

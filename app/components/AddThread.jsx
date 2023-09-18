@@ -7,6 +7,9 @@ import logoSpeak from "../assets/img/logospeak.png";
 
 const AddThread = () => {
   const { user } = UserAuth();
+  const author = user && user.displayName;
+  const authorEmail = user && user.email;
+  const userId = user && user.uid
   const [loading, setLoading] = useState(true);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -28,7 +31,7 @@ const AddThread = () => {
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify({ title, description }),
+        body: JSON.stringify({ title, description, author, authorEmail, userId }),
       });
 
       if (res.ok) {
@@ -47,7 +50,10 @@ const AddThread = () => {
   return (
     <>
       {user ? (
+        <>
+        {/* <p style={{ textAlign: "center" }}>{author ? author : authorEmail}</p> */}
         <div className="form-container">
+          
           <form onSubmit={handleSubmit}>
             <input
               className="input-title"
@@ -67,10 +73,15 @@ const AddThread = () => {
               required
             />
             <button type="submit">
-            <Image className="button-logo" src={logoSpeak} alt="logo speaker's corner" />
+              <Image
+                className="button-logo"
+                src={logoSpeak}
+                alt="logo speaker's corner"
+              />
             </button>
           </form>
         </div>
+        </>
       ) : (
         <div className="no-log">
           <p>You must be logged to create post</p>

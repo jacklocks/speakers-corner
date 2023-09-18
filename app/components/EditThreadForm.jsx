@@ -25,31 +25,38 @@ export default function EditThreadForm({ id, title, description }) {
         throw new Error("failed to update thread");
       }
       router.push("/");
+      router.refresh();
     } catch (error) {
       console.log(error);
     }
   };
   return (
-    <div className="editThread-container">
-      <form onSubmit={handleSubmit}>
-        <input
-          className="input-title"
-          onChange={(e) => setNewTitle(e.target.value)}
-          value={newTitle}
-          type="text"
-          placeholder="subject"
-        />
-        <input
-          className="input-description"
-          onChange={(e) => setNewDescription(e.target.value)}
-          value={newDescription}
-          type="text"
-          placeholder="have your say"
-        />
-         <button type="submit">
-            <Image className="button-logo" src={logoSpeak} alt="logo speaker's corner" />
-            </button>
-      </form>
-    </div>
+    <>
+      <div className="editThread-container">
+        <form onSubmit={handleSubmit}>
+          <input
+            className="input-title"
+            onChange={(e) => setNewTitle(e.target.value)}
+            value={newTitle}
+            type="text"
+            placeholder="subject"
+          />
+          <input
+            className="input-description"
+            onChange={(e) => setNewDescription(e.target.value)}
+            value={newDescription}
+            type="text"
+            placeholder="have your say"
+          />
+          <button type="submit">
+            <Image
+              className="button-logo"
+              src={logoSpeak}
+              alt="logo speaker's corner"
+            />
+          </button>
+        </form>
+      </div>
+    </>
   );
 }

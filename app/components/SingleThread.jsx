@@ -1,10 +1,7 @@
 import React from "react";
-import Link from "next/link";
-import { HiPencilAlt } from "react-icons/hi";
-//import { FaTrashAlt } from "react-icons/fa";
-import RemoveBtn from "./RemoveBtnThread";
 import AddComment from "./AddComment";
 import Comment from "./Comment";
+import EditThread from "./EditThread";
 
 const SingleThread = ({ t }) => {
   return (
@@ -14,22 +11,15 @@ const SingleThread = ({ t }) => {
           <div>
             <h2>{t.title}</h2>
             <div className="content-thread">{t.description}</div>
+            <p>Author : {t.author ? t.author : t.authorEmail}</p>
           </div>
         </div>
-
-        <div className="button-thread">
-        <Link className="pencil" href={`/editThread/${t._id}`}>
-            <HiPencilAlt  />
-          </Link>
-          <div className="trash">
-          <RemoveBtn id={t._id} />
-          </div>
-        </div>
+        <EditThread t={t} />
       </div>
       <Comment threadId={t._id} />
       <AddComment threadId={t._id} />
-      </>
-  )
+    </>
+  );
 };
 
 export default SingleThread;
