@@ -16,7 +16,7 @@ nav {
     margin: 10px;
   }
   & h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-left: 5px;
     margin-top: 4px;
     color: $color2;
@@ -112,6 +112,7 @@ nav {
       position: absolute;
       top: 0;
       right: 0;
+      margin: 6px;
     }
     & .button-logout {
       background: $color3;

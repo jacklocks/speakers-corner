@@ -4,6 +4,8 @@ import { useState } from "react";
 import { auth } from "../firebase";
 import { useRouter } from "next/navigation";
 import { UserAuth } from "../context/AuthContext";
+import Image from "next/image";
+import logoSpeak from "../assets/img/logospeak.png";
 
 const LoginUser = () => {
   const { signIn } = UserAuth();
@@ -26,9 +28,9 @@ const LoginUser = () => {
 
   return (
     <>
-      <div>
+      <div className="login-container">
         <h1>login</h1>
-        <form onSubmit={handleSubmit}>
+        <form className="form-container" onSubmit={handleSubmit}>
           <input
             type="email"
             placeholder="enter your email adress"
@@ -39,7 +41,13 @@ const LoginUser = () => {
             placeholder="enter your password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit">login</button>
+          <button type="submit">
+            <Image
+              className="button-logo"
+              src={logoSpeak}
+              alt="logo speaker's corner"
+            />
+          </button>
         </form>
       </div>
     </>

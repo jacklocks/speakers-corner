@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { UserAuth } from "../context/AuthContext";
+import Image from "next/image";
+import logoSpeak from "../assets/img/logospeak.png";
 
 const AddUser = () => {
   const router = useRouter();
@@ -27,9 +29,9 @@ const AddUser = () => {
 
   return (
     <>
-      <div>
+      <div className="signup-container">
         <h1>signup</h1>
-        <form onSubmit={handleSubmit}>
+        <form  className="form-container" onSubmit={handleSubmit}>
           <input
             type="email"
             placeholder="enter your email adress"
@@ -42,7 +44,13 @@ const AddUser = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <button type="submit">signup</button>
+          <button type="submit">
+          <Image
+                className="button-logo"
+                src={logoSpeak}
+                alt="logo speaker's corner"
+              />
+          </button>
         </form>
       </div>
     </>
