@@ -12,6 +12,7 @@
     margin-top: 30px;
   }
   & .form-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -29,6 +30,25 @@
       border: none;
       &::placeholder {
         color: $color1;
+      }
+    }
+    & .rgpd-container {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: flex;
+      font-size: 0.8rem;
+      margin: 10px;
+      color: white;
+      font-family: $font3;
+      & input {
+        width: 15px;
+      }
+      & p {
+        margin: 6px 0 0 10px;
+        & a {
+          color: $color2;
+        }
       }
     }
     & button {

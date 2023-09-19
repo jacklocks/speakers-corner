@@ -12,6 +12,9 @@ const AddUser = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [checkbox, setCheckbox] = useState(false);
+  const handleChange = () => setCheckbox(!checkbox);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -44,6 +47,21 @@ const AddUser = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+          <div className="rgpd-container">
+                <input
+                  type="checkbox"
+                  name="rgpd"
+                  id="rgpd"
+                  checked={checkbox}
+                  onChange={handleChange}
+                  required
+                />
+                <label htmlFor="rgpd">
+                  <p>
+                    Accepter les <a href="/rgpd">RGPD</a>
+                  </p>
+                </label>
+              </div>
           <button type="submit">
           <Image
                 className="button-logo"

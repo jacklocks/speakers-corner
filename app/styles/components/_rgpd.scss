@@ -1,0 +1,21 @@
+.rgpd-container {
+  color: white;
+  & h1 {
+    color: $color2;
+    font-family: $font;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 2px black;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 30px;
+  }
+  & .rgpd-content {
+    font-family: $font3;
+    padding: 10px;
+    text-transform: justify;
+    
+    & .sub-title {
+        
+    }
+  }
+}
