@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { UserAuth } from "../context/AuthContext";
 import Image from "next/image";
 import logoSpeak from "../assets/img/logospeak.png";
+import Link from "next/link";
 
 const LoginUser = () => {
   const { signIn } = UserAuth();
@@ -29,6 +30,7 @@ const LoginUser = () => {
   return (
     <>
       <div className="login-container">
+      <Link className="link-home" href="/">home</Link>
         <h1>login</h1>
         <form className="form-container" onSubmit={handleSubmit}>
           <input

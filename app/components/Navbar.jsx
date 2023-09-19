@@ -5,14 +5,17 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import imgGoogle from "../assets/img/pngegg.png";
 import logoSpeak from "../assets/img/logospeak.png";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const { user, googleSignIn, logOut } = UserAuth();
   const [loading, setLoading] = useState(true);
+  const router = useRouter();
 
   const handleSignIn = async () => {
     try {
       await googleSignIn();
+      router.push("/");
     } catch (error) {
       console.log(error);
     }
@@ -37,7 +40,9 @@ export default function Navbar() {
   return (
     <>
       <nav>
-        <Image className="logo" src={logoSpeak} alt="logo speaker's corner" />
+        <Link href="/">
+          <Image className="logo" src={logoSpeak} alt="logo speaker's corner" />
+        </Link>
         {!user ? (
           <>
             <div className="authentication-container">

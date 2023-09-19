@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { UserAuth } from "../context/AuthContext";
 import Image from "next/image";
 import logoSpeak from "../assets/img/logospeak.png";
+import Link from "next/link";
 
 const AddUser = () => {
   const router = useRouter();
@@ -32,7 +33,9 @@ const AddUser = () => {
 
   return (
     <>
+    
       <div className="signup-container">
+      <Link className="link-home" href="/">home</Link>
         <h1>signup</h1>
         <form  className="form-container" onSubmit={handleSubmit}>
           <input

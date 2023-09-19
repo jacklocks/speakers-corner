@@ -2,6 +2,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    & .link-home {
+      position: absolute;
+      color:$color2;
+      margin: 10px;
+      text-transform: capitalize;
+      left: 0;
+      font-family: $font3;
+      font-size: 1.1rem;
+    }
     & h1 {
       color: $color2;
       font-family: $font;
