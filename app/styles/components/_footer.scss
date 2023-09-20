@@ -1,9 +1,9 @@
 footer {
   background: #272930;
-  height: 50px;
   margin-top: 20px;
 
   & .footer-container {
+    height: 50px;
     color: white;
     font-family: $font3;
     text-transform: capitalize;
