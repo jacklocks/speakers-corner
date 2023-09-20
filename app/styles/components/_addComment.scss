@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+
   & .form-comment {
     background: $color3;
     min-height: 120px;
@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // border-top: 10px solid white;
+    border-top: none;
 
     & .input-comment {
       min-height: 40px;
@@ -27,9 +27,9 @@
       }
     }
     & button {
-        background: transparent;
-        border: none;
-        margin-top: 10px;
+      background: transparent;
+      border: none;
+      margin-top: 10px;
       & .button-logo {
         width: 35px;
         height: 35px;
@@ -40,6 +40,6 @@
           transition: 0.5s;
         }
       }
-      }
+    }
   }
 }

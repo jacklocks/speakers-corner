@@ -1,11 +1,11 @@
 .thread-container {
-  background: $color3;
   min-height: 80px;
   width: 80%;
   margin-top: 50px;
   text-align: center;
   border-radius: 5px 5px 0px 0px;
   position: relative;
+  border: 2px solid $color3;
   & h2 {
     font-size: 1rem;
     font-family: $font;
@@ -34,10 +34,10 @@
     color: $color1;
   }
   & p {
-    // position: absolute;
     margin: 5px;
     font-size: 0.7rem;
     display: flex;
+    color: white;
   }
   & .button-thread {
     width: 100%;
@@ -45,7 +45,7 @@
     display: flex;
     justify-content: flex-end;
     & .pencil {
-      color: $color1;
+      color: $color3;
       font-size: 20px;
       margin: 0 15px 0 0;
     }

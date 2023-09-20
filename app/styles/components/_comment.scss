@@ -6,14 +6,11 @@
   justify-content: center;
   
   & .comments-container {
-    background: white;
     width: 80%;
     text-align: center;
     height: auto;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
+    border: 2px solid $color3;
+    border-top: none;
     & .text-comment {
       font-size: 0.8rem;
       font-weight: 600;
@@ -22,7 +19,6 @@
       letter-spacing: 1px;
       padding: 5px;
       border-radius: 5px;
-      border: 2px solid $color3;
       width: 95%;
       display: flex;
       flex-direction: column;
@@ -38,6 +34,7 @@
       font-size: 0.7rem;
       left: 0; 
       display: flex;
+      color: white;
     }
    
     & .button-comment {
@@ -45,36 +42,22 @@
       height: 30px;
       display: flex;
       justify-content: flex-end;
-      background: $color2;
-      background: radial-gradient(
-        circle farthest-corner at center center,
-        $color3 0%,
-        #ffffff 100%
-      );
-      background: -webkit-radial-gradient(
-        circle farthest-corner at center center,
-        $color3 0%,
-        #ffffff 100%
-      );
-      background: -moz-radial-gradient(
-        circle farthest-corner at center center,
-        $color3 0%,
-        #ffffff 100%
-      );
       & .pencil {
-        color: $color1;
+        color: $color3;
         font-size: 20px;
         margin: 4px 15px 0 0;
       }
     }
   }
   .show-comments {
-    background: white;
     width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    border: 2px solid $color3;
+    border-top: none;
+    border-bottom: none;
     .toggle-comments {
       border: none;
       background: $color3;
@@ -93,7 +76,6 @@
       &:hover {
         transform: scale(1.2);
         transition: 0.5s;
-        // border: 1px solid $color2;
       }
     }
   }
