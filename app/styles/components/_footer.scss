@@ -1,0 +1,24 @@
+footer {
+  background: #272930;
+  height: 30px;
+  margin-top: 20px;
+  
+  & .footer-container {
+    height: 30px;
+    color: white;
+    font-family: $font3;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-around;
+    & .copyright-container {
+      display: flex;
+      margin: 10px;
+      & .icon-copyright {
+        margin: 1px 5px 0 0;
+      }
+    }
+    & .text-footer {
+        margin: 10px;
+    }
+  }
+}
