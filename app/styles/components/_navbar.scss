@@ -86,7 +86,7 @@ nav {
         padding: 3px;
         height: 22px;
         width: 22px;
-        margin-left: 2px;
+        // margin-left: 2px;
       }
       & p {
         padding: 7px;
@@ -113,6 +113,7 @@ nav {
     }
     & img {
       height: 30px;
+      width: 30px;
       position: absolute;
       top: 0;
       right: 0;
@@ -136,6 +137,14 @@ nav {
         transition: 0.5s;
         border: 1px solid $color2;
       }
+    }
+    & .link-profile {
+      color: $color2;
+      text-transform: capitalize;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: 6px;
     }
   }
 }

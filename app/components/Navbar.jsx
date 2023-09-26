@@ -6,6 +6,8 @@ import Image from "next/image";
 import imgGoogle from "../assets/img/pngegg.png";
 import logoSpeak from "../assets/img/logospeak.png";
 import { useRouter } from "next/navigation";
+import DeleteUserBtn from "./DeleteUserBtn";
+import UpdateAccount from "./UpdateAccount";
 
 export default function Navbar() {
   const { user, googleSignIn, logOut } = UserAuth();
@@ -67,11 +69,12 @@ export default function Navbar() {
           <>
             <div className="user-log">
               <h1>speaker's corner</h1>
-              <img src={user.photoURL} alt="profile picture" />
+              <img src={user.photoURL} alt="" />
               <p>Welcome {user.displayName ? user.displayName : user.email}</p>
               <div className="button-logout" onClick={handleSignOut}>
                 log out
               </div>
+            <Link  className="link-profile" href="/profil">profile</Link>
             </div>
           </>
         )}

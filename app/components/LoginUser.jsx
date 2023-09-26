@@ -30,7 +30,9 @@ const LoginUser = () => {
   return (
     <>
       <div className="login-container">
-      <Link className="link-home" href="/">home</Link>
+        <Link className="link-home" href="/">
+          home
+        </Link>
         <h1>login</h1>
         <form className="form-container" onSubmit={handleSubmit}>
           <input

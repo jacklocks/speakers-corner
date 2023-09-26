@@ -2,78 +2,64 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { UserAuth } from "../context/AuthContext";
-import Image from "next/image";
-import logoSpeak from "../assets/img/logospeak.png";
+import DeleteUserBtn from "./DeleteUserBtn";
 import Link from "next/link";
+import logoSpeak from "../assets/img/logospeak.png";
+import Image from "next/image";
 
-const AddUser = () => {
+const UpdateAccount = () => {
   const router = useRouter();
-  const { createUser } = UserAuth();
+  const { user, updateAccount } = UserAuth();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
 
-  const [checkbox, setCheckbox] = useState(false);
-  const handleChange = () => setCheckbox(!checkbox);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("email:", email);
+    console.log("password:", password);
     try {
-      await createUser(email, password, displayName);
-      alert("signUp successfull");
-      setEmail("");
-      setPassword("");
-      setDisplayName("");
+      await updateAccount(email, password, displayName);
+      alert("update successfully");
+      // setEmail("");
+      // setPassword("");
       router.push("/");
       router.refresh();
     } catch (error) {
-      alert("email or password miss");
-      console.log(error);
+      alert("an error has occurred");
+      console.error(error);
     }
   };
 
   return (
     <>
-      <div className="signup-container">
+      <div className="update-container">
         <Link className="link-home" href="/">
           home
         </Link>
-        <h1>signup</h1>
+        <h1>update</h1>
         <form className="form-container" onSubmit={handleSubmit}>
-        <input
+          <input
             type="text"
-            placeholder="enter your name"
+            placeholder="enter your displayName"
             onChange={(e) => setDisplayName(e.target.value)}
-            required
+            // required
           />
           <input
             type="email"
             placeholder="enter your email adress"
             onChange={(e) => setEmail(e.target.value)}
-            required
+            value={email}
+            // required
           />
           <input
             type="password"
             placeholder="enter your password"
             onChange={(e) => setPassword(e.target.value)}
-            required
+            value={password}
+            // required
           />
-          <div className="rgpd-container">
-            <input
-              type="checkbox"
-              name="rgpd"
-              id="rgpd"
-              checked={checkbox}
-              onChange={handleChange}
-              required
-            />
-            <label htmlFor="rgpd">
-              <p>
-                Accepter les <a href="/rgpd">RGPD</a>
-              </p>
-            </label>
-          </div>
           <button type="submit">
             <Image
               className="button-logo"
@@ -82,9 +68,10 @@ const AddUser = () => {
             />
           </button>
         </form>
+        <DeleteUserBtn />
       </div>
     </>
   );
 };
 
-export default AddUser;
+export default UpdateAccount;
