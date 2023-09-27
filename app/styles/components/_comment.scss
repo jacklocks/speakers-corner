@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+
   & .comments-container {
     width: 80%;
     text-align: center;
@@ -28,15 +28,16 @@
       margin: 0 10px 10px;
       background: white;
       color: $color1;
+      margin-top: 40px;
     }
     & .auth-comment {
       margin: 7px;
       font-size: 0.7rem;
-      left: 0; 
+      left: 0;
       display: flex;
       color: white;
     }
-   
+
     & .button-comment {
       width: 100%;
       height: 30px;
@@ -57,7 +58,6 @@
     text-align: center;
     border: 2px solid $color3;
     border-top: none;
-    border-bottom: none;
     .toggle-comments {
       border: none;
       background: $color3;
@@ -83,35 +83,35 @@
 
 @media screen and (min-width: 1080px) {
   .comment {
-   & .show-comments {
-    width: 50%;
-    & .toggle-comments {
-      width: 200px;
-      height: 40px;
-      font-size: 1.4rem;
-      margin: 20px;
-    }
-   }
-   & .comments-container {
-    width: 50%;
-    & .text-comment {
-      font-size: 1.3rem;
-      line-height: 30px;
-    }
-    & .auth-comment {
-      font-size: 1.2rem;
-    }
-    & .button-comment {
-      height: 50px;
-      & .pencil {
-        color: $color3;
-        font-size: 35px;
-        margin: 4px 15px 0 0;
-      }
-      & .trash svg {
-        font-size: 30px;
+    & .show-comments {
+      width: 50%;
+      & .toggle-comments {
+        width: 200px;
+        height: 40px;
+        font-size: 1.4rem;
+        margin: 20px;
       }
     }
-   }
+    & .comments-container {
+      width: 50%;
+      & .text-comment {
+        font-size: 1.3rem;
+        line-height: 30px;
+      }
+      & .auth-comment {
+        font-size: 1.2rem;
+      }
+      & .button-comment {
+        height: 50px;
+        & .pencil {
+          color: $color3;
+          font-size: 35px;
+          margin: 4px 15px 0 0;
+        }
+        & .trash svg {
+          font-size: 30px;
+        }
+      }
+    }
   }
 }

@@ -1,16 +1,13 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import SingleComment from "./SingleComment";
 
 const ShowComment = ({ comments, threadId }) => {
-  // État local pour suivre l'état d'affichage des commentaires
-  const [showComments, setShowComments] = useState(true);
+  const [showComments, setShowComments] = useState(false);
 
-  // Fonction pour basculer l'état d'affichage des commentaires
   const toggleComments = () => {
     setShowComments(!showComments);
   };
-  
 
   return (
     <>
