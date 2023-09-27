@@ -17,19 +17,43 @@ const AddUser = () => {
   const [checkbox, setCheckbox] = useState(false);
   const handleChange = () => setCheckbox(!checkbox);
 
+  const passwordHasLowercaseLetter = /[a-z]/.test(password);
+  const passwordHasUppercaseLetter = /[A-Z]/.test(password);
+  const passwordHasSpecialCharacter = /^(?=.*[!@#\$%\^&\*\?\:\;\,])/.test(
+    password
+  );
+  const passwordHasNumber = /[0-9]/.test(password);
+
+  const passwordHasValidLength = password.length >= 8;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await createUser(email, password, displayName);
-      alert("signUp successfull");
-      setEmail("");
-      setPassword("");
-      setDisplayName("");
-      router.push("/");
-      router.refresh();
-    } catch (error) {
-      alert("email or password miss");
-      console.log(error);
+    if (
+      passwordHasLowercaseLetter &&
+      passwordHasUppercaseLetter &&
+      passwordHasSpecialCharacter &&
+      passwordHasNumber &&
+      passwordHasValidLength &&
+      checkbox === true
+    ) {
+      try {
+        await createUser(email, password, displayName);
+        alert("signUp successfull");
+        setEmail("");
+        setPassword("");
+        setDisplayName("");
+        router.push("/");
+        router.refresh();
+      } catch (error) {
+        alert("email or password miss");
+        console.log(error);
+      }
+    } else if (checkbox === false) {
+      alert("Please accept the RGPD");
+    } else {
+      alert(
+        "The password must contain a lowercase character, an uppercase character, a number, a special character and at least eight characters!"
+      );
     }
   };
 
@@ -41,7 +65,7 @@ const AddUser = () => {
         </Link>
         <h1>signup</h1>
         <form className="form-container" onSubmit={handleSubmit}>
-        <input
+          <input
             type="text"
             placeholder="enter your name"
             onChange={(e) => setDisplayName(e.target.value)}
@@ -66,7 +90,6 @@ const AddUser = () => {
               id="rgpd"
               checked={checkbox}
               onChange={handleChange}
-              required
             />
             <label htmlFor="rgpd">
               <p>
