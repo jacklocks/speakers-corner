@@ -70,7 +70,7 @@ const AddComment = ({ threadId }) => {
               <div className="comment-button">
                 <button type="submit">
                   <Image
-                    className="button-logo"
+                    className="button-logo-comment"
                     src={logoSpeak}
                     alt="logo speaker's corner"
                   />
@@ -81,7 +81,7 @@ const AddComment = ({ threadId }) => {
           </div>
         </section>
       ) : (
-        <div className="no-log">
+        <div className="no-log-addcomment">
           <p>You must be logged to comment</p>
         </div>
       )}

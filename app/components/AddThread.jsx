@@ -83,7 +83,7 @@ const AddThread = () => {
         </div>
         </>
       ) : (
-        <div className="no-log">
+        <div className="no-log-addthread">
           <p>You must be logged to create post</p>
         </div>
       )}

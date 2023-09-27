@@ -5,6 +5,7 @@ import { BiCopyright } from "react-icons/bi";
 const Footer = () => {
   return (
     <>
+    <section>
       <footer>
         <div className="footer-container">
           <div className="copyright-container">
@@ -16,6 +17,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+      </section>
     </>
   );
 };

@@ -80,3 +80,38 @@
     }
   }
 }
+
+@media screen and (min-width: 1080px) {
+  .comment {
+   & .show-comments {
+    width: 50%;
+    & .toggle-comments {
+      width: 200px;
+      height: 40px;
+      font-size: 1.4rem;
+      margin: 20px;
+    }
+   }
+   & .comments-container {
+    width: 50%;
+    & .text-comment {
+      font-size: 1.3rem;
+      line-height: 30px;
+    }
+    & .auth-comment {
+      font-size: 1.2rem;
+    }
+    & .button-comment {
+      height: 50px;
+      & .pencil {
+        color: $color3;
+        font-size: 35px;
+        margin: 4px 15px 0 0;
+      }
+      & .trash svg {
+        font-size: 30px;
+      }
+    }
+   }
+  }
+}

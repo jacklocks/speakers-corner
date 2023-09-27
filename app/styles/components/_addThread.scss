@@ -10,7 +10,7 @@
     align-items: center;
     width: 80%;
     padding: 10px;
-    height: 150px;
+    height: 200px;
     margin-top: 30px;
     background: $color3;
     border-radius: 5px;
@@ -71,11 +71,46 @@
   }
 }
 
-.no-log {
-  color: white;
-  text-align: center;
-  margin-top: 20px;
-  font-family: $font2;
-  letter-spacing: 1px;
-  font-size: 1.5rem;
+.no-log-addthread {
+  display: flex;
+  justify-content: center;
+  
+  & p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 20px;
+    font-family: $font2;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    background: $color2;
+    width: 350px;
+    height: 40px;
+    border-radius: 5px;
+  }
+  
+}
+
+@media screen and (min-width: 1080px) {
+  .form-container {
+    & form {
+      width: 50%;
+      height: 300px;
+      & .input-title {
+        height: 40px;
+        font-size: 1.5rem;
+      }
+      & .input-description {
+        height: 80px;
+        font-size: 1.5rem;
+      }
+      & button {
+        & .button-logo {
+          width: 70px;
+          height: 70px;
+        }
+      }
+    }
+  }
 }

@@ -51,3 +51,31 @@
     }
   }
 }
+
+@media screen and (min-width: 1080px) {
+  .thread-container {
+    width: 50%;
+    & h2 {
+      font-size: 2rem;
+    }
+    & .content-thread {
+      font-size: 1.3rem;
+      line-height: 30px;
+    }
+    & p {
+      font-size: 1.2rem;
+    }
+    & .button-thread {
+      height: 50px;
+      & .pencil {
+        color: $color3;
+        font-size: 35px;
+        margin: 0 15px 0 0;
+      }
+      & .trash svg {
+        font-size: 30px;
+        margin-right: 9px;
+      }
+    }
+  }
+}
