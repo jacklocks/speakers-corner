@@ -16,16 +16,16 @@ export const metadataFacebook = {
   ogTitle: "Speaker's Corner",
   ogDescription:
     "A Next.js-powered social media platform resembling Twitter, facilitating real-time communication among users",
-  ogImage: "https://i.postimg.cc/qMrJZ1Lc/meta-speaker.webp",
+  ogImage: "https://postimg.cc/RJRShN2f",
 };
 
 export const metadataTwitter = {
-  twitterCard: "https://i.postimg.cc/qMrJZ1Lc/meta-speaker.webp",
+  twitterCard: "https://postimg.cc/RJRShN2f",
   twitterUrl: "https://speakers-corner.vercel.app/",
   twitterTitle: "Speaker's Corner",
   twitterDescription:
     "A Next.js-powered social media platform resembling Twitter, facilitating real-time communication among users",
-  twitterImage: "https://i.postimg.cc/qMrJZ1Lc/meta-speaker.webp",
+  twitterImage: "https://postimg.cc/RJRShN2f",
 };
 
 export default function RootLayout({ children }) {
