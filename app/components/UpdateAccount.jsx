@@ -36,7 +36,7 @@ const UpdateAccount = () => {
     <>
       <div className="update-container">
         <Link className="link-home" href="/">
-          home
+          return
         </Link>
         <h1>update</h1>
         <form className="form-container" onSubmit={handleSubmit}>

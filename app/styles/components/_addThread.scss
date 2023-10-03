@@ -57,16 +57,16 @@
     & button {
       background: transparent;
       border: none;
-    & .button-logo {
-      width: 35px;
-      height: 35px;
-      cursor: pointer;
-      transition: 0.5s;
-      &:hover {
-        transform: scale(1.2);
+      & .button-logo {
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
         transition: 0.5s;
+        &:hover {
+          transform: scale(1.2);
+          transition: 0.5s;
+        }
       }
-    }
     }
   }
 }
@@ -74,7 +74,7 @@
 .no-log-addthread {
   display: flex;
   justify-content: center;
-  
+
   & p {
     display: flex;
     justify-content: center;
@@ -89,14 +89,13 @@
     height: 40px;
     border-radius: 5px;
   }
-  
 }
 
 @media screen and (min-width: 1080px) {
   .form-container {
     & form {
       width: 50%;
-      height: 300px;
+      height: 400px;
       & .input-title {
         height: 40px;
         font-size: 1.5rem;
