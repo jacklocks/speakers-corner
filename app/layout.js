@@ -8,24 +8,13 @@ export const metadata = {
   title: "Speaker's Corner : twitter-type social network",
   description: "twitter-type social network",
   favicon: "/favicon.ico",
-};
-
-export const metadataFacebook = {
-  ogType: "website",
-  ogUrl: "https://speakers-corner.vercel.app/",
-  ogTitle: "Speaker's Corner",
+  author: "Éric Castets",
+  ogTitle: "Speaker's Corner : twitter-type social network",
   ogDescription:
     "A Next.js-powered social media platform resembling Twitter, facilitating real-time communication among users",
-  ogImage: "https://postimg.cc/RJRShN2f",
-};
-
-export const metadataTwitter = {
-  twitterCard: "https://postimg.cc/RJRShN2f",
-  twitterUrl: "https://speakers-corner.vercel.app/",
-  twitterTitle: "Speaker's Corner",
-  twitterDescription:
-    "A Next.js-powered social media platform resembling Twitter, facilitating real-time communication among users",
-  twitterImage: "https://postimg.cc/RJRShN2f",
+  ogType: "website",
+  ogUrl: "https://speakers-corner.vercel.app/",
+  ogLocale: "fr_FR",
 };
 
 export default function RootLayout({ children }) {
@@ -35,26 +24,32 @@ export default function RootLayout({ children }) {
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <link rel="icon" href={metadata.favicon} />
+        <meta name="author" content={metadata.author} />
+        <meta property="og:title" content={metadata.ogTitle} />
+        <meta property="og:description" content={metadata.ogDescription} />
+        <meta property="og:type" content={metadata.ogType} />
+        <meta property="og:url" content={metadata.ogUrl} />
+        <meta property="og:locale" content={metadata.ogLocale} />
+        <meta property="og:image" content="./opengraph-image.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="screen Speaker's Corner" />
 
-        {/* Open Graph / Facebook  */}
-        <meta property="og:type" content={metadataFacebook.ogType} />
-        <meta property="og:url" content={metadataFacebook.ogUrl} />
-        <meta property="og:title" content={metadataFacebook.ogTitle} />
+        <meta property="twitter:card" content="summary_large_image" />
         <meta
-          property="og:description"
-          content={metadataFacebook.ogDescription}
+          property="twitter:url"
+          content="https://speakers-corner.vercel.app/"
         />
-        <meta property="og:image" content={metadataFacebook.ogImage} />
-
-        {/* Twitter */}
-        <meta property="twitter:card" content={metadataTwitter.twitterCard} />
-        <meta property="twitter:url" content={metadataTwitter.twitterUrl} />
-        <meta property="twitter:title" content={metadataTwitter.twitterTitle} />
+        <meta
+          property="twitter:title"
+          content="Speaker's Corner : twitter-type social network"
+        />
         <meta
           property="twitter:description"
-          content={metadataTwitter.twitterDescription}
+          content="A Next.js-powered social media platform resembling Twitter, facilitating real-time communication among users"
         />
-        <meta property="twitter:image" content={metadataTwitter.twitterImage} />
+        <meta property="twitter:image" content="../opengraph-image.png" />
       </Head>
       <body>
         <AuthContextProvider>
